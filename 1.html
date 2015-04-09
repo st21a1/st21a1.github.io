@@ -19,9 +19,9 @@
     	</ul>
     </div>
 	<div class="wrap-header">
-			<h1>
-            <a href="/" id="title"></a>
-			</h1>
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
 	</div>
 <div id="md" style="display: none;">
 <!-- markdown -->
@@ -69,23 +69,17 @@ $(document).ready(function() {
         dataType: "json",
         success: function(data) {
             $("#title").html(data.name);
-            var pages = [];
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
             //path
             var path = "1.html";
             //path end
             var now = 0;
-            for (var i = 0; i < data.pages.length; ++i)
-                if (path == data.pages[i].path) {
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
                     now = i;
-                    pages.push({"select": true, "path": data.pages[i].path, "title": data.pages[i].title});
-                }
-                else {
-                    pages.push({"select": false, "path": data.pages[i].path, "title": data.pages[i].title});
-                }
-            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
-            var pagesHtml = pagesTemplate.render({"pages": pages});
-            $("#pages").append(pagesHtml);
-            var post = data.pages[now];
+            var post = data.posts[now];
             var tmp = post.tags.split(" ");
             var tags = [];
             for (var i = 0; i < tmp.length; ++i)
