@@ -38,6 +38,7 @@
 3.Android Studio运行安卓程序报Failure [INSTALL_FAILED_OLDER_SDK]<br>
 这是由于程序最低Api比AVD高，在根目录有个build.gradle,打开后将minSdkVersion后的数值调低就可以。
 </br>关于Handler<br>
+<pre>
  class WorkerThread extends Thread{
         @Override
          public void run(){
@@ -55,7 +56,7 @@
             // 如果该队列中没有消息，线程就会堵塞
             Looper.loop();
         }
-    }。
+    }。</pre>
 <br>上面这个据说会用的非常多，所以要牢记。
 
 
@@ -77,8 +78,9 @@
 在AVD Manager里创建新AVD时默认input选项都是不打勾的，因为可以直接虚拟一个手机形象出来，而不像ADT里只能虚拟屏幕，所以当你选择auto模式导致手机屏幕铺满电脑屏幕时就会使手机下方的虚拟按键在屏幕之外。<br>
 3.Android Studio运行安卓程序报Failure [INSTALL<em>FAILED</em>OLDER_SDK]<br>
 这是由于程序最低Api比AVD高，在根目录有个build.gradle,打开后将minSdkVersion后的数值调低就可以。
-<br>关于Handler<br>
- class WorkerThread extends Thread{
+<br>关于Handler<br></p>
+
+<pre> class WorkerThread extends Thread{
         @Override
          public void run(){
             //准备Looper对象
@@ -95,8 +97,9 @@
             // 如果该队列中没有消息，线程就会堵塞
             Looper.loop();
         }
-    }。
-<br>上面这个据说会用的非常多，所以要牢记。</p>
+    }。</pre>
+
+<p><br>上面这个据说会用的非常多，所以要牢记。</p>
 
 <p></p>
 <!-- content end -->
