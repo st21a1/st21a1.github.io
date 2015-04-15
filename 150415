@@ -25,12 +25,28 @@
 	</div>
 <div id="md" style="display: none;">
 <!-- markdown -->
-<>
+<article>
+<header>
+<h1>失败～</h1>
+<time pubdate="pubdate">2015年04月15日</time>
+</header>
+<p>算上今天我已经研究了3天的cocos2d，但是错误总是接连不断，最后我只能把vs2013给卸掉了。
+<p>由于教程基本用的都是vs2010和vs2012，cocos也是2.x或3.0，而我在使用vs2013+cocos3.5，这就导致了很多操作变了我却不知道，最重要的是vs2013运行cocos项目bug太多。在很多新手教程里第一步是helloworld，我已经在第一天就做出来了，剩下的两天我在研究flappybird的源代码，想要在自己机器上运行。第一步新建工程就遇到了麻烦<p><a href="http://www.zaojiahua.com/wp-content/uploads/2014/02/2014-02-11_134117.jpg"><img class="size-medium wp-image-108 aligncenter" title="cocos2d-x模板插件" alt="cocos2d-x模板插件" src="http://www.zaojiahua.com/wp-content/uploads/2014/02/2014-02-11_134117-300x183.jpg" data-original="http://www.zaojiahua.com/wp-content/uploads/2014/02/2014-02-11_134117-300x183.jpg" onerror="this.onerror=null;this.src='http://www.zaojiahua.com/wp-content/themes/BYMT/images/images_error.jpg'" width="300" height="183" style="display: block; opacity: 1;"></a>如图所示在2010和2012上vs可以添加一个插件然后就可以使用cocos模板了，多么方便啊，鼠标一点打开模板，然后照着教程制作小游戏。但是很遗憾vs2013不支持这个。。。。。。。。。<p>
+然后那么13是怎么创建新的cocos工程呢？答案是用命令行。Win+R，cmd很方便接着输入一段代码
 <!-- markdown end -->
 </div>
 <div class="entry" id="main">
 <!-- content -->
-<p>&lt;&gt;</p>
+<p></p><article><p></p>
+
+<header>
+<h1>失败～</h1>
+<time pubdate="pubdate">2015年04月15日</time>
+</header>
+
+<p></p><p>算上今天我已经研究了3天的cocos2d，但是错误总是接连不断，最后我只能把vs2013给卸掉了。
+</p><p>由于教程基本用的都是vs2010和vs2012，cocos也是2.x或3.0，而我在使用vs2013+cocos3.5，这就导致了很多操作变了我却不知道，最重要的是vs2013运行cocos项目bug太多。在很多新手教程里第一步是helloworld，我已经在第一天就做出来了，剩下的两天我在研究flappybird的源代码，想要在自己机器上运行。第一步新建工程就遇到了麻烦</p><p><a href="http://www.zaojiahua.com/wp-content/uploads/2014/02/2014-02-11_134117.jpg"><img class="size-medium wp-image-108 aligncenter" title="cocos2d-x模板插件" alt="cocos2d-x模板插件" src="http://www.zaojiahua.com/wp-content/uploads/2014/02/2014-02-11_134117-300x183.jpg" data-original="http://www.zaojiahua.com/wp-content/uploads/2014/02/2014-02-11_134117-300x183.jpg" onerror="this.onerror=null;this.src='http://www.zaojiahua.com/wp-content/themes/BYMT/images/images_error.jpg'" style="display: block; opacity: 1;" height="183" width="300"></a>如图所示在2010和2012上vs可以添加一个插件然后就可以使用cocos模板了，多么方便啊，鼠标一点打开模板，然后照着教程制作小游戏。但是很遗憾vs2013不支持这个。。。。。。。。。</p><p>
+然后那么13是怎么创建新的cocos工程呢？答案是用命令行。Win+R，cmd很方便接着输入一段代码</p></article>
 <!-- content end -->
 </div>
 <br>
