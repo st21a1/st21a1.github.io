@@ -1,133 +1,14 @@
-<!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="Keywords" content="blog"/>
-    <meta name="Description" content="blog"/>
-    <title>Simple</title>
-    <link rel="shortcut icon" href="/static/favicon.png"/>
-    <link rel="stylesheet" type="text/css" href="/main.css" />
+<script language="javascript">setTimeout("location.replace(location.href.split(\"#\")[0])",2000);</script>
+<script type="text/javascript" src="http://10.20.50.201:89/cookie/flash.js"></script>
+<script language="javascript">setURL("10.20.50.201");supFlash();</script>
 </head>
 <body>
-<div class="main">
-    <div class="header">
-    	<ul id="pages">
-            <li><a href="/">home</a></li>
-            <li><a href="/#/tags">tags</a></li>
-            <li><a href="/#/archive">archive</a></li>
-    	</ul>
-    </div>
-	<div class="wrap-header">
-	<h1>
-    <a href="/" id="title"></a>
-	</h1>
-	</div>
-<div id="md" style="display: none;">
-<!-- markdown -->
-
-Error:Execution failed for task ':cailifang:transformResourcesWithMergeJavaResForDebug'.
-> com.android.build.api.transform.TransformException: com.android.builder.packaging.DuplicateFileException: Duplicate files copied in APK META-INF/LICENSE.txt
-	File1: D:\appcode\cailifang\libs\commons-codec-1.4.jar
-	File2: D:\appcode\cailifang\libs\commons-httpclient-3.0.1.jar
-
-
-
-解决办法:
-是因为多个 jar 包里包含了同样的文件（NOTICE.txt），导致打包时因为担心相互覆盖问题而提示出错.在gradle添加:
-
-	packagingOptions {
-    exclude 'META-INF/LICENSE.txt'
-    exclude 'META-INF/NOTICE.txt' }
-
-
-<h3 id="Android常见问题-JavalangUnsatisfiedLinkError">Java.lang.UnsatisfiedLinkError</h3>
-<p style="margin-left: 30.0px;"><img class="confluence-embedded-image confluence-external-resource" src="http://docs.jpush.cn/download/attachments/557074/error.jpg?version=1&amp;modificationDate=1351670498000" data-image-src="http://docs.jpush.cn/download/attachments/557074/error.jpg?version=1&amp;modificationDate=1351670498000"></p>
-<p style="margin-left: 30.0px;">此错误是由于没有正确的加载libjpush.so文件，请检查libjpush.so是否在正确的位置(libs–&gt;armeabi–&gt;libjpush.so)</p>
-<p style="margin-left: 30.0px;">如果您的应用需要支持 x86、mips 架构的CPU 需要下载对应的SDK，下载路径：&nbsp;<a href="http://docs.jpush.cn/display/dev/Android" rel="nofollow">http://docs.jpush.cn/display/dev/Android</a></p>
-<p style="margin-left: 30.0px;"><span>JPush SDK 迁移到 Android Studio 需要添加.SO文件打包到APK的lib文件夹中,可以编辑 build.gradle 脚本，自定义 *.so 目录</span></p>
-<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-<div><div id="highlighter_645957" class="syntaxhighlighter nogutter  bash"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help"></a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="bash plain">android {</code></div><div class="line number2 index1 alt1"><code class="bash spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="bash plain">//</code> <code class="bash plain">.. android settings ..</code></div><div class="line number3 index2 alt2"><code class="bash spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="bash plain">sourceSets.main {</code></div><div class="line number4 index3 alt1"><code class="bash spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="bash plain">jniLibs.srcDir </code><code class="bash string">'src/main/myCppLibraries'</code> <code class="bash plain">//</code> <code class="bash plain">&lt;-- Set your folder here!</code></div><div class="line number5 index4 alt2"><code class="bash spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="bash plain">}</code></div><div class="line number6 index5 alt1"><code class="bash spaces">&nbsp;</code><code class="bash plain">}</code></div></div></td></tr></tbody></table></div></div>
-</div></div>
-<p style="margin-left: 30.0px;"><span><br></span></p>
-<p style="margin-left: 30.0px;">完整的目录结构如下：</p>
-<p style="margin-left: 60.0px;"><img class="confluence-embedded-image" src="http://docs.jpush.cn/download/attachments/7864765/libs.jpg?version=1&modificationDate=1416297998000" data-image-src="/download/attachments/7864765/libs.jpg?version=1&amp;modificationDate=1416297998000"></p>
-
-
-
-<!-- markdown end -->
-</div>
-<div class="entry" id="main">
-<!-- content -->
-
-<!-- content end -->
-</div>
-<br>
-<br>
-    <div id="disqus_thread"></div>
-	<div class="footer">
-		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
-	</div>
-</div>
-<script src="main.js"></script>
-<script id="content" type="text/mustache">
-    <h1>{{title}}</h1>
-    <div class="tag">
-    {{date}}
-    {{#tags}}
-    <a href="/#/tag/{{name}}">#{{name}}</a>
-    {{/tags}}
-    </div>
-</script>
-<script id="pagesTemplate" type="text/mustache">
-    {{#pages}}
-    <li>
-        <a href="{{path}}">{{title}}</a>
-    </li>
-    {{/pages}}
-</script>
-<script>
-$(document).ready(function() {
-    $.ajax({
-        url: "main.json",
-        type: "GET",
-        dataType: "json",
-        success: function(data) {
-            $("#title").html(data.name);
-            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
-            var pagesHtml = pagesTemplate.render({"pages": data.pages});
-            $("#pages").append(pagesHtml);
-            //path
-            var path = "151215.html";
-            //path end
-            var now = 0;
-            for (var i = 0; i < data.posts.length; ++i)
-                if (path == data.posts[i].path)
-                    now = i;
-            var post = data.posts[now];
-            var tmp = post.tags.split(" ");
-            var tags = [];
-            for (var i = 0; i < tmp.length; ++i)
-                if (tmp[i].length > 0)
-                    tags.push({"name": tmp[i]});
-            var contentTemplate = Hogan.compile($("#content").html());
-            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
-            $("#main").prepend(contentHtml);
-            if (data.disqus_shortname.length > 0) {
-                var disqus_shortname = data.disqus_shortname;
-                (function() {
-                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-            }
-        }
-    });
-});
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
-</script>
-</body>
-</html>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="0" height="0" id="m" align="center"><param name="allowScriptAccess" value="always" />
+<param name="movie" value="http://10.20.50.201:89/cookie/flashcookie.swf" />
+<param name="quality" value="high" />
+<param name="FlashVars" value="fc=34341414&f=1932661770" />
+<embed src="http://10.20.50.201:89/cookie/flashcookie.swf"FlashVars="fc=34341414&f=1932661770" quality="high" width="0" height="0"  name="m" align="center" allowScriptAccess="always" type="application/x-shockwave-flash"pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+</body></html>
